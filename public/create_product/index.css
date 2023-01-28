@@ -1,0 +1,25 @@
+#nav-bar{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: space-around;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+ 
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    margin: 12px
+}
+
+#submit-button{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
