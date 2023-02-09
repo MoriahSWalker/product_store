@@ -38,3 +38,5 @@ submitButton.addEventListener("click", async () => {
     uploadStatusTag.style.color = "red";
   }
 });
+
+// #home-button needs to be dynamic to link to home page

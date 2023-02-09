@@ -30,6 +30,7 @@ app.get("/get_product_data", async (req, res) => {
   res.json(response);
 });
 
+// get specific product by ID
 app.get("/get_specific_product/:product_id", async (req, res) => {
   console.log("get specific product route");
   let id = req.params.product_id;
@@ -40,13 +41,21 @@ app.get("/get_specific_product/:product_id", async (req, res) => {
   res.json(response);
 });
 
+// make route to update products by id
+app.patch("/update_product/:product_id", (req, res) => {
+  let id = req.params.product_id;
+
+  Product.findByIdAndUpdate(id, req.body, { new: true })
+    .then((product) => {
+      res.send(product);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
 // route to add new product
 app.post("/new_product", async (req, res) => {
-  //   let name = req.body.nameString;
-  //   let image = req.body.urlString;
-  //   let description = req.body.descriptionString;
-  //   let price = req.body.priceString;
-  //   let inventoryValue = req.body.inventoryNumber;
   const {
     nameString: name,
     urlString: image,
